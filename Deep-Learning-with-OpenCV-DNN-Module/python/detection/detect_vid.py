@@ -10,9 +10,11 @@ with open('../../input/object_detection_classes_coco.txt', 'r') as f:
 COLORS = np.random.uniform(0, 255, size=(len(class_names), 3))
 
 # load the DNN model
-model = cv2.dnn.readNet(model='../../input/frozen_inference_graph.pb',
-                        config='../../input/ssd_mobilenet_v2_coco_2018_03_29.pbtxt.txt', 
-                        framework='TensorFlow')
+model = cv2.dnn.readNet(model='../../input/frozen_inference_graph.pb', config='../../input/ssd_mobilenet_v2_coco_2018_03_29.pbtxt.txt', framework='TensorFlow')
+                        
+#model = cv2.dnn.readNet(model='../../input/DenseNet_121.caffemodel',
+#                        config='../../input/DenseNet_121.prototxt', 
+#                        framework='Caffe')
 
 # capture the video
 cap = cv2.VideoCapture('../../input/video_1.mp4')
